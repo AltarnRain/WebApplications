@@ -1,5 +1,5 @@
-import * as React from 'react';
-import './Hello.css';
+import * as React from "react";
+import "./Hello.css";
 
 export interface Props {
   name: string;
@@ -13,7 +13,7 @@ class Hello extends React.Component<Props, object> {
     const { name, enthusiasmLevel = 1, onIncrement, onDecrement } = this.props;
 
     if (enthusiasmLevel <= 0) {
-      throw new Error('You could be a little more enthusiastic. :D');
+      throw new Error("You could be a little more enthusiastic. :D");
     }
 
     return (
@@ -32,7 +32,7 @@ class Hello extends React.Component<Props, object> {
 
 // helpers
 function getExclamationMarks(numChars: number) {
-  return Array(numChars + 1).join('!');
+  return Array(numChars + 1).join("!");
 }
 
 export default Hello;

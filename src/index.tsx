@@ -1,11 +1,11 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import registerServiceWorker from './registerServiceWorker';
-import './index.css';
-import Hello from './Components/Hello';
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+import registerServiceWorker from "./registerServiceWorker";
+import "./index.css";
+import Hello from "./Components/Hello";
 
 ReactDOM.render(
   <Hello name="TypeScript" enthusiasmLevel={10} />,
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 registerServiceWorker();
