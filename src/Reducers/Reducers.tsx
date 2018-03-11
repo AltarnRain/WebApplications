@@ -9,6 +9,6 @@ export function enthusiasm(state: StoreState, action: EnthusiasmAction): StoreSt
         case DECREMENT_ENTHUSIASM:
             return { ...state, enthusiasmLevel: Math.max(1, state.enthusiasmLevel - 1) };
         default:
-            throw new Error("Action not defined");
+            return state;
     }
 }
