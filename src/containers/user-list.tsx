@@ -1,11 +1,8 @@
 import * as React from "react";
 import { bindActionCreators, Dispatch } from "redux";
 import { connect } from "react-redux";
-import { State, User } from "../interfaces";
-
-interface UserListProperties {
-    Users: User[];
-}
+import State from "../Interfaces/State";
+import UserListProperties from "../Interfaces/UserListProperties";
 
 class UserList extends React.Component<UserListProperties> {
 
@@ -32,7 +29,6 @@ class UserList extends React.Component<UserListProperties> {
             );
         });
     }
-
 }
 
 export default connect(UserList.mapStateToProps)(UserList);

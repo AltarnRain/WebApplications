@@ -1,4 +1,4 @@
-import { User } from "../interfaces";
+import User from "../Interfaces/User";
 
 function getNames(): User[] {
     return [
