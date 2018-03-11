@@ -1,17 +1,24 @@
 import * as React from "react";
 import { bindActionCreators, Dispatch } from "redux";
-import { connect } from "react-redux";
+import { connect, MapStateToProps } from "react-redux";
 import State from "../Interfaces/State";
 import UserListProperties from "../Interfaces/UserListProperties";
+import SelectUserAction from "../Interfaces/SelectUserAction";
+import User from "../Interfaces/User";
+import { selectUser } from "../Actions";
 
 class UserList extends React.Component<UserListProperties> {
 
     public static mapStateToProps(state: State): UserListProperties {
         const userListProperties = {
-            Users: state.Users
+            Users: state.Users,
         } as UserListProperties;
 
         return userListProperties;
+    }
+
+    public static mapDispatchToProps(dispatch: Dispatch<any>) {
+        return bindActionCreators({selectUser: selectUser}, dispatch);
     }
 
     public render() {
@@ -31,4 +38,4 @@ class UserList extends React.Component<UserListProperties> {
     }
 }
 
-export default connect(UserList.mapStateToProps)(UserList);
+export default connect(UserList.mapStateToProps, UserList.mapDispatchToProps)(UserList);
