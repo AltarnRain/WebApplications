@@ -1,6 +1,6 @@
 // import Hello from '../Components/Hello';
-import * as actions from "../actions";
-import { StoreState } from "../types";
+import * as actions from "../Actions/Actions";
+import { StoreState } from "../Types/Types";
 // import { connect, Dispatch } from 'react-redux';
 import { Dispatch } from "react-redux";
 
