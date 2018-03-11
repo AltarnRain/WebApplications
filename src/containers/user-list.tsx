@@ -5,7 +5,8 @@ import State from "../Interfaces/State";
 import UserListProperties from "../Interfaces/UserListProperties";
 import SelectUserAction from "../Interfaces/SelectUserAction";
 import User from "../Interfaces/User";
-import { selectUser } from "../Actions";
+import selectUser from "../Actions";
+import SelectUserActionCreator from "../Interfaces/SelectUserActionCreator";
 
 class UserList extends React.Component<UserListProperties> {
 
@@ -17,8 +18,11 @@ class UserList extends React.Component<UserListProperties> {
         return userListProperties;
     }
 
-    public static mapDispatchToProps(dispatch: Dispatch<any>) {
-        return bindActionCreators({selectUser: selectUser}, dispatch);
+    public static mapDispatchToProps(dispatch: Dispatch<any>): SelectUserActionCreator {
+        const creator = {
+            selectUser: selectUser
+        } as SelectUserActionCreator;
+        return bindActionCreators(creator, dispatch);
     }
 
     public render() {
