@@ -16,7 +16,7 @@ class UserList extends React.Component<UserListProperties> {
 
     public static mapStateToProps(state: State): UserListProperties {
         const userListProperties = {
-            Users: state.Users,            
+            Users: state.users,            
         } as UserListProperties;
 
         return userListProperties;

@@ -2,7 +2,8 @@ import { ReducersMapObject } from "redux";
 import User from "./User";
 
 interface State {
-    Users: User[];
+    users: User[];
+    user: User;
 }
 
 export default State;
