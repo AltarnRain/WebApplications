@@ -1,5 +1,5 @@
 import * as React from "react";
-import UserList from "../containers/user-list";
+import UserList from "../Containers/user-list";
 
 const App = () => (
     <div>

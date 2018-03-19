@@ -1,18 +1,22 @@
 import * as React from "react";
-import { bindActionCreators, Dispatch } from "redux";
+import { bindActionCreators, Dispatch, ActionCreator } from "redux";
 import { connect, MapStateToProps } from "react-redux";
 import State from "../Interfaces/State";
 import UserListProperties from "../Interfaces/UserListProperties";
 import SelectUserAction from "../Interfaces/SelectUserAction";
 import User from "../Interfaces/User";
 import selectUser from "../Actions";
-import SelectUserActionCreator from "../Interfaces/SelectUserActionCreator";
+
+// This interface is only used in this container.
+interface SelectUserActionCreator extends ActionCreator<any> {
+    selectUser: (user: User) => SelectUserAction;
+}
 
 class UserList extends React.Component<UserListProperties> {
 
     public static mapStateToProps(state: State): UserListProperties {
         const userListProperties = {
-            Users: state.Users,
+            Users: state.Users,            
         } as UserListProperties;
 
         return userListProperties;
@@ -36,7 +40,7 @@ class UserList extends React.Component<UserListProperties> {
     private createListItems(): JSX.Element[] {
         return this.props.Users.map((user) => {
             return (
-                <li key={user.id}>{user.first} {user.last}</li>
+                <li onClick={() => this.props.selectUser(user)} key={user.id}>{user.first} {user.last}</li>
             );
         });
     }
