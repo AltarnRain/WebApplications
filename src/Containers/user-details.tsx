@@ -3,30 +3,14 @@ import { bindActionCreators, Dispatch, ActionCreator } from "redux";
 import { connect, MapStateToProps } from "react-redux";
 import UserDetailProperties from "../Interfaces/UserDetailProperties";
 import State from "../Interfaces/State";
+import UserDetail from "../Components/user-details";
 
-class UserDetail extends React.Component<UserDetailProperties> {
+const mapStateToProps = (state: State): UserDetailProperties => {
+    const userDetailProperties = {
+        user: state.user,
+    } as UserDetailProperties;
 
-    public static mapStateToProps(state: State): UserDetailProperties {
-        const userDetailProperties = {
-            user: state.user,
-        } as UserDetailProperties;
+    return userDetailProperties;
+};
 
-        return userDetailProperties;
-    }
-
-    public render() {
-        if (this.props.user) {
-            return (
-                <div>
-                    Name: {this.props.user.first + this.props.user.last} <br />
-                    Age: {this.props.user.age} <br />
-                    Desc: {this.props.user.description} <br />
-                </div>
-            );
-        } else {
-            return <h4>Select a user</h4>;
-        }
-    }
-}
-
-export default connect(UserDetail.mapStateToProps)(UserDetail);
+export default connect(mapStateToProps)(UserDetail);

@@ -6,44 +6,26 @@ import UserListProperties from "../Interfaces/UserListProperties";
 import SelectUserAction from "../Interfaces/SelectUserAction";
 import User from "../Interfaces/User";
 import selectUser from "../Actions";
+import UserList from "../Components/user-list";
 
 // This interface is only used in this container.
 interface SelectUserActionCreator extends ActionCreator<any> {
     selectUser: (user: User) => SelectUserAction;
 }
 
-class UserList extends React.Component<UserListProperties> {
+const mapStateToProps = (state: State): UserListProperties => {
+    const userListProperties = {
+        users: state.users,
+    } as UserListProperties;
 
-    public static mapStateToProps(state: State): UserListProperties {
-        const userListProperties = {
-            Users: state.users,            
-        } as UserListProperties;
+    return userListProperties;
+};
 
-        return userListProperties;
-    }
-
-    public static mapDispatchToProps(dispatch: Dispatch<any>): SelectUserActionCreator {
-        const creator = {
-            selectUser: selectUser
-        } as SelectUserActionCreator;
-        return bindActionCreators(creator, dispatch);
-    }
-
-    public render() {
-        return (
-            <ul>
-                {this.createListItems()}
-            </ul>
-        );
-    }
-
-    private createListItems(): JSX.Element[] {
-        return this.props.Users.map((user) => {
-            return (
-                <li onClick={() => this.props.selectUser(user)} key={user.id}>{user.first} {user.last}</li>
-            );
-        });
-    }
-}
-
-export default connect(UserList.mapStateToProps, UserList.mapDispatchToProps)(UserList);
+const mapDispatchToProps = (dispatch: Dispatch<any>): SelectUserActionCreator => {
+    const creator = {
+        selectUser: selectUser
+    } as SelectUserActionCreator;
+    return bindActionCreators(creator, dispatch);
+};
+   
+export default connect(mapStateToProps, mapDispatchToProps)(UserList);

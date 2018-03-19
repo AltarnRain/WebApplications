@@ -2,7 +2,7 @@ import User from "./User";
 import SelectUserAction from "./SelectUserAction";
 
 interface UserListProperties {
-    Users: User[];
+    users: User[];
     selectUser: (user: User) => SelectUserAction;
 }
 
