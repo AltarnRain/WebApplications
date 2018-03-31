@@ -1,0 +1,22 @@
+ Volume in drive E is Stuff
+ Volume Serial Number is C8E4-D969
+
+ Directory of E:\Reps
+
+31-03-2018  11:51    <DIR>          .
+31-03-2018  11:51    <DIR>          ..
+20-01-2018  11:35    <DIR>          CodeWars
+17-03-2018  22:53    <DIR>          Experiments
+11-02-2018  13:31    <DIR>          Extentions
+29-01-2018  20:47    <DIR>          Mod-Re-Oganizer
+26-02-2018  23:55    <DIR>          R42
+31-01-2018  20:35    <DIR>          SettingToDataGrid
+11-02-2018  18:30    <DIR>          StylecopInjector
+26-03-2018  20:18    <DIR>          TSFiddle
+06-01-2016  20:53    <DIR>          Twilight
+15-03-2018  22:28    <DIR>          TypeScriptAsp
+25-03-2018  17:40    <DIR>          typescriptfiddler
+31-03-2018  11:51    <DIR>          webapplications
+31-03-2018  11:51                 0 x.txt
+               1 File(s)              0 bytes
+              14 Dir(s)  360.117.915.648 bytes free
