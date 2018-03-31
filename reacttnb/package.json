@@ -1,14 +1,15 @@
 {
-  "name": "4inarow",
+  "name": "reactapp2",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/enzyme-adapter-react-16": "^1.0.2",
     "@types/react-redux": "^5.0.15",
-    "help": "^3.0.2",
+    "babel-polyfill": "^6.26.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
-    "react-scripts-ts": "2.14.0",
+    "react-scripts-ts": "2.13.0",
     "redux": "^3.7.2"
   },
   "scripts": {
@@ -18,10 +19,12 @@
     "eject": "react-scripts-ts eject"
   },
   "devDependencies": {
+    "@types/enzyme": "^3.1.9",
     "@types/jest": "^22.2.0",
     "@types/node": "^9.4.7",
     "@types/react": "^16.0.40",
     "@types/react-dom": "^16.0.4",
+    "react-addons-test-utils": "^15.6.2",
     "typescript": "^2.7.2"
   }
 }
