@@ -19,3 +19,16 @@ div p.color {
     color:blue;
 }
 
+button {
+    font-weight: bold;
+    border-radius: 25%;
+    background-color: aquamarine;
+}
+
+input {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+div button {        
+    background-color: teal;
+}
