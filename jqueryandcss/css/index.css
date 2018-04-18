@@ -1,0 +1,21 @@
+
+/* Sets fonts to itallic but only if they are within a div.*/
+div.italic {
+    font-style: italic;
+}
+
+/* Colors paragrapgs red but only if they reside in a div with class italic.*/
+div.italic p.color {
+    color:red;
+}
+
+/* Colors paragraphs in teal but only if they are a sub-element of a div */
+div p.color {
+    color:teal;
+}
+
+/* Elements with id "makeblue" are blue.*/
+#makeblue {
+    color:blue;
+}
+
